@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
+const postRoutes = require('./routes/post');
 
-const { getPosts } = require('./routes/post')
-
-app.get('/', getPosts)
+// Middleware
+const morgan = require('morgan');
+app.use(morgan('dev'));
+   
+app.use('/', postRoutes);
 
 const port = 8080;
 app.listen(port, () => {

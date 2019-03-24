@@ -1,3 +1,8 @@
-exports.getPosts = (req, res) => {
-    return res.send("text test"); 
-};
+const express = require('express');
+const router = express.Router()
+
+const postController = require('../controllers/post');
+
+router.get('/', postController.getPosts);
+
+module.exports = router;
