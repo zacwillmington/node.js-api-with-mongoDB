@@ -1,3 +1,8 @@
 exports.getPosts = (req, res) => {
-    return res.json("testing"); 
+    return res.json({
+        posts: [
+            {titl: "First post"},
+            {title: 'Second post'}
+        ]
+    }); 
 };
