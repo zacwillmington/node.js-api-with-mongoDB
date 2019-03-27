@@ -13,9 +13,8 @@ exports.createPostValidtor = (req, res, next) => {
 
     const errors = req.validationErrors();
 
-
     if(errors) {
-        const firstError = error.map((err) => err.msg)[0]
+        const firstError = errors.map((err) => err.msg)[0]
         return res.status(400).json({error: firstError});
     } 
 
