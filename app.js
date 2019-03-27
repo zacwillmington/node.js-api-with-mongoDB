@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const postRoutes = require('./routes/post');
 const bodyParser = require('body-parser');
+const expressValidator =  require('express-validator');
 
 const mongoose = require('mongoose');
 // Load env variables.
@@ -23,6 +24,7 @@ mongoose.connection.on('error', err => {
 const morgan = require('morgan');
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+app.use(expressValidator);
    
 app.use('/', postRoutes);
 
