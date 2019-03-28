@@ -32,3 +32,11 @@ const port = 8080;
 app.listen(port, () => {
     console.log(`App is listening on port: ${port}`);
 });
+const bcrypt = require('bcrypt');
+const myFunction = async () => {
+    const pass = "1223232123"
+    const passHashed = await bcrypt.hash(pass, 8);
+    console.log(pass, passHashed);
+}
+
+myFunction();
